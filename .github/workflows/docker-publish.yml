@@ -23,12 +23,9 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./meme-generator 
-
 
     - name: Build Docker image
-      run: docker build -t armando4049/meme-generator ./meme-generator  
-      working-directory: . 
+      run: docker build -t armando4049/meme-generator ./meme-generator
 
     - name: Login to DockerHub
       uses: docker/login-action@v2
@@ -40,4 +37,6 @@ jobs:
       run: |
         docker tag armando4049/meme-generator armando4049/meme-generator:latest
         docker push armando4049/meme-generator:latest
-      working-directory: ./meme-generator 
+
+    - name: Run the Docker container
+      run: docker run -p 8080:80 armando4049/meme-generator
