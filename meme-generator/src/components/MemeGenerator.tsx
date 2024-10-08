@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import html2canvas from 'html2canvas';
-import '../styles/MemeGenerator.css'; // Importamos el CSS
+import '../styles/MemeGenerator.css'; 
 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
-  const [imageUrl, setImageUrl] = useState('https://i.imgflip.com/1bij.jpg'); // Imagen por defecto
+  const [imageUrl, setImageUrl] = useState('https://i.imgflip.com/1bij.jpg'); 
   const memeRef = useRef(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

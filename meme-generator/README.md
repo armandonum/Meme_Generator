@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Meme Generator
 
-Currently, two official plugins are available:
+This is a meme generator built in React that allows users to upload an image, add text at the top and bottom, and download the resulting meme in image format.
+## Characteristics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Upload a custom image
+- Add text to the top and bottom of the image.
+- Download the generated meme as an image (`.png`).
+- Default image in case none is loaded.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+### App preview
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+![alt text](image.png)
+
+
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **html2canvas**: Library for capturing HTML content and converting it to an image.
+- **CSS**: For custom styles used in the application.
+
+## Prerequisites
+
+To run this project locally, you need the following installed:
+
+- [Node.js](https://nodejs.org/en/) (version 16 or higher)
+- [npm](https://www.npmjs.com/)
+
+## Installation
+
+Follow these steps to install and run the project locally:
+
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/armando4049/Memes_Generator.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd Memes_Generator
+    ```
+
+3. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open your browser at `http://localhost:3000` to view the running application.
+
+## Usage
+
+1. Enter the text you want to appear at the top and bottom of the image using the input fields.
+2. Upload an image from your device by clicking the file selection button. If no image is uploaded, a default image will be used.
+3. Click the **Download Meme** button to download the generated image as a `.png` file.
+
+## Project Structure
+
+```bash
+src/
+│
+├── components/
+│   └── MemeGenerator.tsx  
+│
+├── styles/
+│   └── MemeGenerator.css 
+│
+└── App.tsx 
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Code Explanation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **`MemeGenerator.tsx`**: Contains the main component for the meme generator. It uses `useState` to manage the top text, bottom text, and the URL of the uploaded image. The `html2canvas` function captures the generated meme and converts it into a downloadable image.
+- **`MemeGenerator.css`**: CSS file that defines the styles for the meme generator, including the positions of the top and bottom text, the download button, and the layout of the uploaded image.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Docker
+
+To run the application in a Docker container, follow these steps:
+
+1. Build the Docker image:
+
+    ```bash
+    docker build -t meme-generator .
+    ```
+
+2. Run the container:
+
+    ```bash
+    docker run -p 3000:3000 meme-generator
+    ```
+
+## Contributing
+
+If you would like to contribute to this project:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -am 'Added new feature'`).
+4. Push your changes to the forked repository (`git push origin feature/new-feature`).
+5. Open a Pull Request.
+
