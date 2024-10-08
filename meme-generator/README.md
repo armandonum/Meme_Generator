@@ -99,6 +99,15 @@ To run the application in a Docker container, follow these steps:
     ```bash
     docker run -p 3000:3000 meme-generator
     ```
+3. pull to images 
+    ```bash
+    docker pull armando4049/meme-generator
+    ```
+4. run the images 
+    ```bash
+    sudo docker run -d -p 3000:80 armando4049/meme-generator
+    ```
+
 
 ## Contributing
 
