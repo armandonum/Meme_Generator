@@ -36,7 +36,7 @@ Follow these steps to install and run the project locally:
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/armando4049/Memes_Generator.git
+    git clone https://github.com/armandonum/Meme_Generator.git
     ```
 
 2. Navigate to the project directory:
